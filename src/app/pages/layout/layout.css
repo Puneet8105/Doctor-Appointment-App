@@ -1,0 +1,18 @@
+.layout-wrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* 🚫 stops layout scroll */
+}
+
+/* Navbar stays fixed at top */
+.navbar {
+  flex-shrink: 0;
+}
+
+/* Router pages area */
+.layout-content {
+  flex: 1;
+  overflow: hidden; /* layout won’t scroll */
+  padding: 1%;
+}

@@ -1,0 +1,162 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #9ac2e7, #81cbf7);
+}
+
+/* Container */
+.login-container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* Card */
+.login-card {
+  background: white;
+  border-radius: 2%;
+  padding: 6%;
+  width: 90%;
+  max-width: 35vw;    
+  min-width: 280px;
+  box-shadow: 0 2% 5% rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* Header */
+.login-header {
+  text-align: center;
+  margin-bottom: 8%;
+}
+
+.login-header i {
+  font-size: 2.5rem;
+  color: var(--primary-blue);
+  display: block;
+  margin-bottom: 4%;
+}
+
+.login-header h1 {
+  font-size: 1.8rem;
+  color: var(--text-dark);
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Form */
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Form group */
+.form-group {
+  margin-bottom: 6%;
+}
+
+.form-label {
+  color: var(--text-dark);
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 2%;
+  display: block;
+}
+
+/* Inputs */
+.form-control {
+  border: 1px solid var(--border-color);
+  border-radius: 2%;
+  padding: 3% 4%;
+  font-size: 0.9rem;
+  background-color: var(--input-bg);
+  width: 100%;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.form-control:focus {
+  border-color: var(--primary-blue);
+  background-color: white;
+  box-shadow: 0 0 0 0.8% rgba(37, 99, 235, 0.15);
+  outline: none;
+}
+
+/* Checkbox */
+.form-check {
+  margin-bottom: 5%;
+  display: flex;
+  align-items: center;
+}
+
+.form-check-input {
+  width: 5%;
+  height: 5%;
+  cursor: pointer;
+}
+
+.form-check-label {
+  margin-left: 3%;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+}
+
+/* Button */
+.btn-login {
+  background: var(--primary-blue);
+  border: none;
+  color: white;
+  padding: 3.5%;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 2%;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.2s ease;
+  margin-bottom: 5%;
+}
+
+.btn-login:hover {
+  background: #1d4ed8;
+  transform: translateY(-3%);
+}
+
+.btn-login:active {
+  transform: scale(0.98);
+}
+
+.btn-login:disabled {
+  background-color: #d1d5db;
+  cursor: not-allowed;
+}
+
+/* Links */
+.forgot-link,
+.signup-link {
+  color: var(--primary-blue);
+  text-decoration: none;
+  font-size: 0.85rem;
+  display: block;
+  text-align: center;
+}
+
+.forgot-link:hover,
+.signup-link:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+.login-footer {
+  text-align: center;
+  margin-top: 6%;
+  padding-top: 5%;
+  border-top: 1px solid var(--border-color);
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+

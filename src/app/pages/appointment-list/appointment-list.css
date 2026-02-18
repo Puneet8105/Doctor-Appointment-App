@@ -1,0 +1,184 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* CENTER CARD */
+.appointment-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background: #f4f7fb;
+  padding: 2%;
+}
+
+.appointment-card {
+  width: 90%;
+  max-width: 1100px;
+  height: 95%;
+  background: #fff;
+  padding: 2%;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+/* TITLE */
+.title {
+  text-align: center;
+  margin-bottom: 1%;
+  font-weight: 600;
+}
+
+/* FILTER BUTTONS */
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 1%;
+}
+
+.filter-buttons button {
+  padding: 6px 16px;
+  border-radius: 20px;
+  border: none;
+  background: #e0e6ed;
+  font-weight: 600;
+}
+
+.filter-buttons button.active {
+  background: #0d6efd;
+  color: white;
+}
+
+/* TABLE AREA */
+.table-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.table-scroll {
+  flex: 1;
+  overflow-y: auto; /* ⭐ scroll only body area */
+}
+
+/* TABLE */
+.appointment-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+/* STICKY HEADER */
+.appointment-table th {
+  background: #0d6efd;
+  color: white;
+  padding: 12px;
+  text-align: left;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+/* TABLE CELLS */
+.appointment-table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+/* ⭐ STRIPED ROWS */
+.appointment-table tbody tr:nth-child(odd) {
+  background: #f8f9fa;
+}
+
+.appointment-table tbody tr:hover {
+  background: #e9f2ff;
+}
+
+/* STATUS COLORS */
+.status.done { color: #2e7d32; font-weight: 600; }
+.status.pending { color: #ff9800; font-weight: 600; }
+
+/* BUTTON */
+.done-btn {
+  background: green;
+  color: rgb(255, 255, 255);
+  border: none;
+  padding: 6px 12px;
+  border-radius: 18px;
+}
+
+/* MOBILE VIEW */
+@media (max-width: 768px) {
+
+  /* Hide desktop header */
+  .appointment-table thead {
+    display: none;
+  }
+
+  /* Table becomes vertical list */
+  .appointment-table,
+  .appointment-table tbody,
+  .appointment-table tr {
+    display: block;
+    width: 100%;
+  }
+
+  /* Each row becomes card */
+  .appointment-table tr {
+    background: #ffffff;
+    border: 1px solid #e0e6ed;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    padding: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+
+  /* Each cell becomes row inside card */
+  .appointment-table td {
+    display: flex;
+    align-items: flex-start;
+    padding: 10px 4px;
+    border-bottom: 1px solid #f1f5f9;
+    text-align: left;
+    font-size: 0.95rem;
+    color: #334155;
+    font-weight: 500;
+  }
+
+  /* Remove last border */
+  .appointment-table td:last-child {
+    border-bottom: none;
+    margin-top: 8px;
+  }
+
+  /* Label on left */
+  .appointment-table td::before {
+    content: attr(data-label) " :";
+    font-weight: 700;
+    color: #64748b;
+
+    min-width: 120px;
+    width: 120px;
+    margin-right: 10px;
+    flex-shrink: 0;
+    text-align: left;
+  }
+
+
+
+  /* Highlight patient name */
+  .appointment-table td[data-label="Patient"] {
+    font-weight: 700;
+    color: #0d6efd;
+    font-size: 1.1rem;
+  }
+
+  
+}
+

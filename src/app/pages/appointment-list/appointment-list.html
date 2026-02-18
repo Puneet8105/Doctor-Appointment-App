@@ -1,0 +1,55 @@
+<div class="appointment-wrapper">
+  <div class="appointment-card">
+
+    <h2 class="title"> {{ title | uppercase}} </h2> 
+
+    <div class="filter-buttons">
+      <button [class.active]="filterType==='all'" (click)="loadAppointments('all')">All</button>
+      <button [class.active]="filterType==='new'" (click)="loadAppointments('new')">New</button>
+      <button [class.active]="filterType==='done'" (click)="loadAppointments('done')">Done</button>
+    </div>
+
+    <div class="table-container">
+      <div class="table-scroll">
+        <table class="appointment-table">
+          <thead>
+            <tr>
+              <th>Patient Id</th>
+              <th>appointment Id</th>
+              <th>Patient</th>
+              <th>Mobile</th>
+              <th>Date</th>
+              <th>Status</th>
+              @if(filterType === 'new') { <th>Action</th> }
+            </tr>
+          </thead>
+
+          <tbody>
+            @for (a of appointments; track a.appointmentId) {
+            <tr>
+              <td data-label="Patient Id">{{a.patientId}}</td>
+             <td data-label="Patient Id">{{a.appointmentId}}</td>
+              <td data-label="Patient">{{a.patientName | uppercase}}</td>
+              <td data-label="Mobile">{{a.mobileNo}}</td>
+              <td data-label="Date">{{a.appointmentDate | date: 'dd/MM/yyyy' }}</td>
+              <td data-label="Status">
+                <span class="status" [class.done]="a.isDone" [class.pending]="!a.isDone">
+                  {{a.isDone ? 'Done' : 'Pending'}}
+                </span>
+              </td>
+
+              @if(filterType === 'new') {
+              <td data-label="Action">
+                <button class="done-btn" (click)="markDone(a.appointmentId)">✔ Done</button>
+              </td>
+              }
+            </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</div>
+

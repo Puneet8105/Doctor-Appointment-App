@@ -1,0 +1,43 @@
+<div class="patient-wrapper">
+  <div class="patient-card">
+
+    <h4 class="title">Patient List</h4>
+<div class="search">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search by name, city, or mobile" [(ngModel)]="searchText" (input)="searchPatients()">
+    <!-- <button class="btn btn-outline-success my-2 my-sm-0" (click)="searchPatients()">Search</button> -->
+</div>
+
+    <div class="table-container">
+      <div class="table-scroll">
+
+        <table class="patient-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Mobile</th>
+              <th>Email</th>
+              <th>City</th>
+              <th>Address</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            @for (p of filteredPatients; track p.patientId) {
+            <tr>
+              <td data-label="ID">{{p.patientId}}</td>
+              <td data-label="Name">{{p.patientName}}</td>
+              <td data-label="Mobile">{{p.mobileNo}}</td>
+              <td data-label="Email">{{p.email}}</td>
+              <td data-label="City">{{p.city}}</td>
+              <td data-label="Address">{{p.address}}</td>
+            </tr>
+            }
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+
+  </div>
+</div>
