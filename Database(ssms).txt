@@ -1,0 +1,59 @@
+---
+
+## 🗄️ Database Design
+Database: DocAppointmentDb
+Authentication: Windows Authentication
+DBMS:SQL Server
+
+---
+
+### 📋 Patient Table
+
+| Column Name | Data Type    | Required | Description                     |
+| ----------- | ------------ | -------- | ------------------------------- |
+| patientId   | int          | Yes      | Unique patient ID (Primary Key) |
+| patientName | varchar(50)  | Yes      | Patient full name               |
+| mobileNo    | varchar(10)  | Yes      | Contact number                  |
+| email       | varchar(50)  | No       | Email address                   |
+| city        | varchar(50)  | Yes      | Patient city                    |
+| address     | varchar(200) | Yes      | Patient address                 |
+
+---
+
+### 📅 Appointment Table
+
+| Column Name     | Data Type | Required | Description                         |
+| --------------- | --------- | -------- | ----------------------------------- |
+| appointmentId   | int       | Yes      | Unique appointment ID (Primary Key) |
+| patientId       | int       | Yes      | Linked patient ID (Foreign Key)     |
+| appointmentDate | datetime  | Yes      | Appointment date & time             |
+| isDone          | bit       | Yes      | Consultation completed status       |
+| fees            | float     | No       | Consultation fees                   |
+
+---
+
+### 🔗 Relationship
+
+* One **Patient** can have multiple **Appointments**
+* `appointment.patientId` → references `patient.patientId`
+
+
+---
+
+## 🗄️ Database Configuration
+
+**Server:** DESKTOP-H8C0JJU\LOCALDB#648EEA4F
+**Database:** DocAppointmentDb
+**Authentication:** Windows Authentication
+**DBMS:** SQL Server (LocalDB)
+
+Connection string example:
+
+```
+Server=DESKTOP-H8C0JJU\LOCALDB#648EEA4F;
+Database=DocAppointmentDb;
+Trusted_Connection=True;
+TrustServerCertificate=True;
+```
+
+> When running on another system, replace the server name with your SQL Server instance.
