@@ -1,59 +1,92 @@
-# DotorAppointmentApp
+# 🏥 Doctor Appointment Management System
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.0.
+A clinic front-desk (receptionist) application used to manage patient details and appointment queue efficiently.
 
-## Development server
+This system is designed for hospital/clinic receptionists to register patients, manage appointment flow, and organize daily consultation schedules.
 
-To start a local development server, run:
+---
+
+## 👩‍💼 User Role
+
+**Receptionist Only**
+
+* Patients do NOT use this application
+* Receptionist handles complete appointment workflow
+
+---
+
+## ✨ Features
+
+### 🔐 Authentication
+
+* Secure Login for receptionist
+
+### 👤 Patient Management
+
+* Add new patient
+* View patient list
+* Maintain patient records
+
+### 📅 Appointment Management
+
+* Create appointment for doctor
+* Assign queue number
+* View daily appointment list
+* Track consultation order
+
+### 🖥️ Dashboard
+
+* Daily appointment overview
+* Organized patient queue
+
+---
+
+## 🧱 Tech Stack
+
+**Frontend**
+
+* Angular
+* TypeScript
+* HTML
+* CSS
+
+**Backend**
+
+* ASP.NET Core Web API
+* SQL Server Database
+
+---
+
+## 🗂️ Project Structure
+
+* Patient module
+* Appointment module
+* Login module
+* Dashboard layout
+
+---
+
+## 🚀 How to Run
+
+### Frontend
 
 ```bash
+npm install
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### Backend
 
-## Code scaffolding
+Run ASP.NET Core Web API from Visual Studio
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+---
 
-```bash
-ng generate component component-name
-```
+## 🎯 Purpose
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+This project demonstrates clinic workflow automation and receptionist queue handling system.
 
-```bash
-ng generate --help
-```
+---
 
-## Building
+## 👨‍💻 Author
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+**Puneeth K**
